@@ -15,14 +15,14 @@ public class UnitMovementController : MonoBehaviour {
 	void Update () {
 		if (currentMoveTarget != null)
 		{
-			navAgent.destination = currentMoveTarget.position;
+			navAgent.destination = new Vector3(currentMoveTarget.position.x, 0.0f, currentMoveTarget.position.z);
 		}
 	}
 
 	void MoveTo (Vector3 destination)
 	{
 		currentMoveTarget = null;
-		navAgent.destination = destination;
+		navAgent.destination = new Vector3(destination.x, 0.0f, destination.z);
 	}
 
 	void Follow (GameObject target)
